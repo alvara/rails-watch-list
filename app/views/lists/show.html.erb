@@ -1,6 +1,11 @@
 <h1><%= @list.name %></h1>
-<p>movies will go here</p>
+<p>Let the binge begin</p>
 
+<%= link_to 'Add a New Movie', new_list_bookmark_path(@list) %>
 
-
-
+<% @list.bookmarks.each do |bookmark| %>
+  <%= bookmark.comment %>
+  <%= bookmark.movie_id %>
+  <%= bookmark.movie.title %>
+  <%= link_to 'delete', bookmark_path(bookmark), method: :delete, data: { confirm: "Delete bookmark?"}  %>
+<% end %>

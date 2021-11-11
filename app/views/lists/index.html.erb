@@ -1,8 +1,13 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<h1>Binge Master</h1>
+<p>Plan your next movie marathon binge</p>
+<%= link_to 'Create New Binge', new_list_path %>
 
-<% @lists.each do |list| %>
-  <%= list.name %><br>
-<% end %>
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= list.name %>
+      <%= link_to 'view', list_path(list) %>
+    </li>
+  <% end %>
+</ul>
 
 
