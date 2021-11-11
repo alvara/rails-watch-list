@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'autoprefixer-rails', '10.2.5' # puts browser specific css to add compatability
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
+gem 'open-uri'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
