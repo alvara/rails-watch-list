@@ -25,8 +25,15 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# le wagon recommendations
+gem 'autoprefixer-rails', '10.2.5' # puts browser specific css to add compatability
+gem 'font-awesome-sass', '~> 5.15.1'
+gem 'simple_form'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
