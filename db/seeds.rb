@@ -1,5 +1,5 @@
 require 'json'
-require 'open_uri'
+require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -16,11 +16,8 @@ Movie.destroy_all
 # connect  to api
 api_key = ENV['MOVIE_API']
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{api_key}&language=en-US&page=4"
-configuration_url = "https://api.themoviedb.org/3/configuration?api_key=#{api_key}"
 movies_serialized = URI.open(url).read
-configuration_serialized = URI.open(configuration_url).read
 movies = JSON.parse(movies_serialized)
-size_info = JSON.parse(configuration_serialized)
 
 # loop through several pages
 
@@ -35,6 +32,5 @@ movies['results'].each do |movie|
 end
 # "backdrop_sizes"=>["w300", "w780", "w1280", "original"]
 # poster_sizes"=>["w92", "w154", "w185", "w342", "w500", "w780", "original"]
-
 
 p "finished seeding, created #{Movie.count} movies "
