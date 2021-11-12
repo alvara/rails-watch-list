@@ -14,7 +14,7 @@ Bookmark.destroy_all
 Movie.destroy_all
 
 # connect  to api
-api_key = ''
+api_key = ENV['MOVIE_API']
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{api_key}&language=en-US&page=4"
 configuration_url = "https://api.themoviedb.org/3/configuration?api_key=#{api_key}"
 movies_serialized = URI.open(url).read
