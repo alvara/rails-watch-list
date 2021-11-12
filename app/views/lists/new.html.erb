@@ -7,6 +7,7 @@
       <div class="offset-md-4 col-md-4">
        <%= simple_form_for @list do |f| %>
           <%= f.input :name, class: 'text-white' %>
+          <%= f.input :photo, as: :file %>
           <%= f.submit 'Create List', class: 'btn btn-lg btn-primary' %>
         <% end %> 
       </div>
