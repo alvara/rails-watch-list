@@ -12,7 +12,13 @@
   </head>
 
   <body>
-    <%= link_to 'home', lists_path %>
+    <!-- Just an image -->
+  <nav class="navbar fixed-top navbar-lewagon">
+   <%= link_to lists_path, class: 'navbar-brand' do %>
+    <i id='logo' class="fas fa-ticket-alt"></i>
+   <% end %>
+  </nav>
+   
     <%= yield %>
   </body>
 </html>

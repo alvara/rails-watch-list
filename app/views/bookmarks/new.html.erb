@@ -1,8 +1,23 @@
-<h1>Let's add a new movie</h1>
-<p>Find a new movie to include in your movie binge.</p>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
- <%= f.submit 'Create bookmark' %>
-<% end %>
 
+
+
+
+
+
+
+<div class="banner text-center" style="background-image: linear-gradient(90deg, rgba(30,31,44,0.7),rgba(0,0,0,1)), url(https://image.tmdb.org/t/p/original<%= Movie.order('RANDOM()').first.poster_url  %>);">
+  <div class="container">
+    <h1>Let's add a new movie</h1>
+    <p>Find a new movie to include in your movie binge.</p>
+
+    <div class="row">
+      <div class="offset-md-4 col-md-4">
+       <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :comment %>
+          <%= f.association :movie, collection: @movies, input_html: {id: 'mySelect2', class: 'select2' }  %>
+          <%= f.submit 'Create bookmark', class: 'btn btn-lg btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

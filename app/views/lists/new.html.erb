@@ -1,7 +1,15 @@
-<h1>What is your next binge about?</h1>
-<p>Give a short description about your planned movie binge.</p>
+<div class="banner text-center" style="background-image: linear-gradient(90deg, rgba(30,31,44,0.7),rgba(0,0,0,1)), url(https://image.tmdb.org/t/p/original<%= Movie.order('RANDOM()').first.poster_url  %>);">
+  <div class="container">
+    <h1>What is your next binge about?</h1>
+    <p>Give a short description about your planned movie binge.</p>
 
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.submit 'Create List' %>
-<% end %>
+    <div class="row">
+      <div class="offset-md-4 col-md-4">
+       <%= simple_form_for @list do |f| %>
+          <%= f.input :name, class: 'text-white' %>
+          <%= f.submit 'Create List', class: 'btn btn-lg btn-primary' %>
+        <% end %> 
+      </div>
+    </div>
+  </div>
+</div>

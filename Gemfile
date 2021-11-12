@@ -30,9 +30,11 @@ gem 'autoprefixer-rails', '10.2.5' # puts browser specific css to add compatabil
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem 'open-uri'
+gem 'cloudinary', '~> 1.16.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'dotenv-rails'
 
 
 
